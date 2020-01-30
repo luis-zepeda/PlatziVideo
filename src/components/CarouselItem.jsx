@@ -1,16 +1,18 @@
 import React from 'react';
 import '../assets/styles/components/CarouselItem.scss';
+import playIcon from '../assets/static/play_icon.png'
+import plusIcon from '../assets/static/plus.png'
 
-const CarouselItem = () => (
+const CarouselItem = ({cover,title,year,contentRating,duration}) => (
     <div className="carousel-item">
-		<img className="carousel-item__img" src="https://images.unsplash.com/photo-1568322445389-dc9223328f88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="egypt"/>
+		<img className="carousel-item__img" src={cover} alt={title}/>
 		<div className="carousel-item__details">
 		    <div>
-		        <img src="../assets/play_icon.png" alt="play"/>
-		        <img src="../assets/plus.png" alt="Plus"/>
+		        <img src={playIcon} alt="play"/>
+		        <img src={plusIcon} alt="Plus"/>
 		    </div>
-		    <p className="carousel-item__details--title">Título descriptivo</p>
-		    <p className="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+<p className="carousel-item__details--title">{title}</p>
+<p className="carousel-item__details--subtitle">{`${year} ${contentRating} ${duration}`}</p>
 		</div>
 	</div>
 );
